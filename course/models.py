@@ -26,6 +26,13 @@ class Current(models.Model):
 def __str__(self):
         return self.course
 
+class Average(models.Model):
+    bids = models.CharField('Bids', max_length=255)
+    asks = models.CharField('Ask', max_length=255)
+
+def __str__(self):
+        return self.course
+
 
 
 

@@ -1,7 +1,22 @@
 <h1>Aktualna cena bitcoina:</h1>
-<table border='5'>
 
 {% for entry in current %}
+<table border='5'>
+<tr>
+	<td>Bids</td>	<td>{{entry.asks}}</td> 
+</tr>
+<tr>
+    <td>Asks</td>	<td>{{entry.bids}}</td> 
+</tr>
+</table>
+<ul>Stan na: {{entry.time}} </ul>
+{% endfor %}
+
+<h1>.</h1>
+
+{% for entry in average %}
+<ul>Srednia cena z ostatnich 10 minut :</ul>
+<table border='5'>
 <tr>
 	<td>Bids</td>	<td>{{entry.asks}}</td> 
 </tr>
@@ -11,23 +26,15 @@
 </table>
 {% endfor %}
 
-<h1>.{{lasttime.min }}</h1>
-
-
-<ul>Srednia cena z ostatnich 10 minut : course.average </ul>
 <h1>.</h1>
 
-
 <table border='5'>
-
 <tr>
-	<td>czas(ile minut temu)</td>	<td>min</td>    <td>max</td>
+	<td>minuta</td>	<td>min</td>    <td>max</td>
 </tr>
 {% for entry in lasttime %}
     <tr>
 	    <td>{{entry.time}}</td>	<td>{{entry.min}}</td>    <td>{{entry.max}}</td>
     </tr>
 {% endfor %}
-
 </table>
-
